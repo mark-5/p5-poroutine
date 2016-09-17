@@ -20,5 +20,8 @@ readme: README.md
 
 README.md: lib/PoRoutine.pm
 	pod2markdown $< $@
+
+release: readme manifest distdir
+
 __END__
 }
