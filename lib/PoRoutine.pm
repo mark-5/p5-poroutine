@@ -8,6 +8,8 @@ use List::Util qw();
 use PoRoutine::Channel;
 use POSIX qw();
 
+our $VERSION = '0.0.1';
+
 our %CHANNELS;
 
 sub go {
