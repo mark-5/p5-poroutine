@@ -141,6 +141,24 @@ Run $code in a new process. Any PoRoutine::Channels used by $code must be passed
 
 Wait for a PoRoutine::Channel to become ready for recv, and pass the result to the paired callback.
 
+=head1 LIMITATIONS
+
+Channels can only be used for communication between a parent proc and its children. Child PoRoutines cannot communicate with other children.
+
+GoRoutine code is run in a forked process. This means that GoRoutines cannot manipulate variables in the parent process.
+
+Data sent through pipes is serialized using Storable, which cannot handle code references.
+
+=head1 TODO
+
+=over
+
+=item mature error handling
+
+=item cross PoRoutine communication
+
+=back
+
 =cut
 
 1;

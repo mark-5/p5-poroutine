@@ -13,3 +13,12 @@ WriteMakefile(
         'prereqs'   => $cpanfile->prereq_specs,
     },
 );
+
+sub MY::postamble {
+    return <<'__END__';
+readme: README.md
+
+README.md: lib/PoRoutine.pm
+	pod2markdown $< $@
+__END__
+}
