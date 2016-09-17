@@ -118,6 +118,29 @@ PoRoutine - A po' man's implementation of goroutines
 
 A stupid, dependency free implementation of goroutines in perl. Relies heavily on forking and pipes.
 
+=head1 METHODS
+
+=head2 channel
+
+    my $c = PoRoutine->channel
+
+Create a new PoRoutine::Channel
+
+=head2 go(@channels, $code)
+
+    PoRoutine->go($c, sub { $c->send( work() ) });
+
+Run $code in a new process. Any PoRoutine::Channels used by $code must be passed to the go method.
+
+=head2 select(($channel, $code), ...)
+
+    my $result = PoRoutine->select(
+        $c1 => sub { process1(shift) },
+        $c2 => sub { process2(shift) },
+    );
+
+Wait for a PoRoutine::Channel to become ready for recv, and pass the result to the paired callback.
+
 =cut
 
 1;

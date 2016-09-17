@@ -43,4 +43,30 @@ sub send  { shift->_impl->send(@_)      }
 sub close { shift->_impl->close(@_)     }
 sub pipes { values %{ shift->{_pipes} } }
 
+=head1 NAME
+
+PoRoutine::Channel
+
+=head1 METHODS
+
+=head2 recv
+
+    my $msg = $c->recv;
+
+Receive a previously sent message from the channel.
+
+=head2 send($msg)
+
+    $c->send($msg)
+
+Send $msg to another process using the channel.
+
+=head2 close
+
+    $c->close()
+
+Close the channel.
+
+=cut
+
 1;
