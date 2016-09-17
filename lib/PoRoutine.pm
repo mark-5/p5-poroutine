@@ -100,6 +100,12 @@ sub select {
 
 PoRoutine - A po' man's implementation of goroutines
 
+=head1 STATUS
+
+B<THIS IS EXPERIMENTAL!>
+
+Anything can change at any time for no reason.
+
 =head1 SYNOPSIS
 
     my $c = PoRoutine->channel;

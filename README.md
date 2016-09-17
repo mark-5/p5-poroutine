@@ -2,6 +2,12 @@
 
 PoRoutine - A po' man's implementation of goroutines
 
+# STATUS
+
+**THIS IS EXPERIMENTAL!**
+
+Anything can change at any time for no reason.
+
 # SYNOPSIS
 
     my $c = PoRoutine->channel;
